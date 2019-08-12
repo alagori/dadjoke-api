@@ -24,7 +24,7 @@ func randnum(length int) int64 {
 	return n
 }
 
-func getjoke() []byte {
+func getJoke(lastnum int64) ([]byte, int64) {
 	file, _ := ioutil.ReadFile("jokelist.json")
 	data := jokes{}
 	_ = json.Unmarshal([]byte(file), &data)
@@ -32,11 +32,21 @@ func getjoke() []byte {
 	// 	fmt.Println("q: ", data[i].Q)
 	// 	fmt.Println("a: ", data[i].A)
 	// }
-
-	answer := data[randnum(len(data))]
+	jokenum := randnum(len(data))
+	answer := data[jokenum]
 	result, _ := json.Marshal(answer)
 	// print(result)
-	return result
+	return result, jokenum
+}
+
+func getOneJokeRand() {
+	lastJoke := int64(1)
+	// webserver()
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		joke, jokenum := getJoke(lastJoke)
+		w.Write(joke)
+		lastJoke = jokenum
+	})
 }
 
 // func webserver() {
@@ -49,12 +59,15 @@ func getjoke() []byte {
 // }
 
 func main() {
-	// webserver()
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write(getjoke())
+	// lastjoke := int64(1)
+	// // webserver()
+	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	// 	joke, jokenum := getjoke(lastjoke)
+	// 	w.Write(joke)
+	// 	lastjoke = jokenum
+	// })
 
-	})
-
+	getOneJokeRand()
 	http.ListenAndServe(":8080", nil)
 
 }
