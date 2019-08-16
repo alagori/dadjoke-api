@@ -41,7 +41,16 @@ func getJoke(lastnum int64) ([]byte, int64) {
 
 func getOneJokeRand() {
 	lastJoke := int64(1)
-	// webserver()
+	http.HandleFunc("/getonejokerand", func(w http.ResponseWriter, r *http.Request) {
+		joke, jokenum := getJoke(lastJoke)
+		w.Write(joke)
+		lastJoke = jokenum
+	})
+}
+
+// LegacyEndPoint to keep compatiblity with old clients
+func legacyEndPoint() {
+	lastJoke := int64(1)
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		joke, jokenum := getJoke(lastJoke)
 		w.Write(joke)
@@ -49,23 +58,7 @@ func getOneJokeRand() {
 	})
 }
 
-// func webserver() {
-// 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-// 		getjoke()
-// 	})
-
-// 	http.ListenAndServe(":80", nil)
-
-// }
-
 func main() {
-	// lastjoke := int64(1)
-	// // webserver()
-	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-	// 	joke, jokenum := getjoke(lastjoke)
-	// 	w.Write(joke)
-	// 	lastjoke = jokenum
-	// })
 
 	getOneJokeRand()
 	http.ListenAndServe(":8080", nil)
