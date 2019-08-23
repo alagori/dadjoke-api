@@ -399,7 +399,7 @@
 },
 {
     "q": "How does a programmer escape a bear?",
-    "a": "\🐻"
+    "a": "\\🐻"
 },
 {
     "q": "You should be careful with functions that don't return a value.",
