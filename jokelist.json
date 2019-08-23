@@ -380,4 +380,84 @@
 {
     "q": "php",
     "a": null
+},
+{
+    "q": "What screams \"I'm Insecure\"?",
+    "a": "http://"
+},
+{
+    "q": "Why does Python live on land?",
+    "a": "Because it's above C-level"
+},
+{
+    "q": "Did you hear that Bash got cancer?",
+    "a": "It's terminal"
+},
+{
+    "q": "Why did the functions stop calling each other?",
+    "a": "Because they had constant arguments."
+},
+{
+    "q": "How does a programmer escape a bear?",
+    "a": "\🐻"
+},
+{
+    "q": "You should be careful with functions that don't return a value.",
+    "a": "In fact, I would just a void them."
+},
+{
+    "q": "Why don't bachelors like Git?",
+    "a": "Because they are afraid to commit."
+},
+{
+    "q": "Why did the web developer accept a 200 dollar raise?",
+    "a": "200 is OK"
+},
+{
+    "q": "Why did the web developer accept a 200 dollar raise?",
+    "a": "200 is OK"
+},
+{
+    "q": "What do you call a skinny ghost?",
+    "a": "BOOLEAN."
+},
+{
+    "q": "You know what the hackers did when the police came to their door?",
+    "a": "They ransomware safe."
+},
+{
+    "q": "Kernel programming is like buying from IKEA",
+    "a": "Some assembly required."
+},
+{
+    "q": "Why does Yoda's code always crash?",
+    "a": "Because there is no try."
+},
+{
+    "q": "Had to go to the ER yesterday because a snake bit me 8 times",
+    "a": "They only treated me for one byte"
+},
+{
+    "q": "Why was the GET request reluctant to go the party?",
+    "a": "Because they had no body to go with!"
+},
+{
+    "q": "If you hold a UNIX shell to your ear, can you hear the C?",
+    "a": null
+},
+{
+    "q": "You know what the best thing about booleans is?",
+    "a": "Even when you're wrong you're just a bit off"
+},
+{
+    "q": "I don't flip tables when programming...",
+    "a": "I DROP them"
+},
+{
+    "q": "So I heard nvidia are working on self-driving cars...",
+    "a": "...I guess their drivers kept crashing."
+},
+{
+    "q": "What do you call a party with programmers?",
+    "a": "Git bash"
 }]
